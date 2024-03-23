@@ -1,3 +1,5 @@
+# FCC Data Visualization - Visualize Data with a Bar Chart
+
 User Story #1: My chart should have a title with a corresponding id="title".
 
 User Story #2: My chart should have a g element x-axis with a corresponding id="x-axis".
@@ -27,3 +29,8 @@ User Story #13: My tooltip should have a data-date property that corresponds to 
 Here is the dataset you will need to complete this project: https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json
 
 You can use this CDN link to run the tests in any environment you like: https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+
+## Takeaway learning:
+
+KISS

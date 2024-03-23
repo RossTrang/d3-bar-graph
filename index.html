@@ -7,13 +7,38 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <script src="//d3js.org/d3.v3.min.js"></script>
-<script src="script.js"></script>
-    
+<!-- <script src="script.js"></script> -->
 
+    
+<script>
+
+const w = 500;
+const h = 500;
+const padding = 50;
+
+d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json", function (d) { 
+    
+    const svg = d3.select("body")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h);
+    
+    svg.selectAll("rect")
+    .data(d)
+    .enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("width", 10).attr("height", 50)
+    .attr("x", 0).attr("y", 100)
+    
+    console.log(d.data); 
+        }); 
+</script>
     
 <body>
 
 <h1>D3 bar graph</h1>
 
 </body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </html>

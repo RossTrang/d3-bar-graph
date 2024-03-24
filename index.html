@@ -6,7 +6,7 @@
     <title>D3 Visualization - Bar Graph</title>
 </head>
 <link rel="stylesheet" href="style.css">
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="//d3js.org/d3.v7.min.js"></script>
 <!-- <script src="script.js"></script> -->
 
 <style>
@@ -26,6 +26,11 @@
         const svgWidth = 1000;
         const svgHeight = 600;
         const barWidth = (svgWidth / d.data.length)
+
+        var x = d3.scaleTime().range([0, svgWidth])
+        var y = d3.scale.linear().range(svgHeight, 0)
+
+        console.log(x)
         
         const svg = d3.select("body")
             .append("svg")

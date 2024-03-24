@@ -9,29 +9,38 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 <!-- <script src="script.js"></script> -->
 
-    
+<style>
+    body {
+        display: block;
+    }
+</style>
+   
 <script>
+       
+    const w = 800;
+    const h = 600;
+       
+       d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json", function (d) { 
 
-const w = 500;
-const h = 500;
-const padding = 50;
+            const svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h)
+                    .attr("title", "Federal Reserve Ecomnic Data - US GDP");
 
-d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json", function (d) { 
-    
-    const svg = d3.select("body")
-    .append("svg")
-    .attr("width", w)
-    .attr("height", h);
-    
-    svg.selectAll("rect")
-    .data(d)
-    .enter()
-    .append("rect")
-    .attr("class", "bar")
-    .attr("width", 10).attr("height", 50)
-    .attr("x", 0).attr("y", 100)
-    
-    console.log(d.data); 
+                svg.selectAll("rect")
+                .data(d.data)
+                .enter().append("rect").attr("class", "bar")
+                .attr("width", "10px").attr("height", (d, i) => d[1])
+                .attr("x", (d, i) => i * 5).attr("y", (d, i) => h - d[1])
+                .attr("title", )
+
+                svg.selectAll("text")
+                .data(d.data)
+                .enter()
+
+            
+            console.log(d.data); 
         }); 
 </script>
     
@@ -40,5 +49,5 @@ d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
 <h1>D3 bar graph</h1>
 
 </body>
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 </html>

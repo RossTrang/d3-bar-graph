@@ -33,4 +33,5 @@ You can use this CDN link to run the tests in any environment you like: https://
 
 ## Takeaway learning:
 
-KISS
+KISS - D3 has it's own fetch mechanisms including d3.json() so there is no need to use the native JS alternatives and face the attendent 
+problems with responses being _undefined_ outside of the fetching function.
